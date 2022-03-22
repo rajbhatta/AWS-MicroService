@@ -6,7 +6,7 @@
 - Install AWS toolkit in VS
 <img src="img/7.png"/>
 
-- Type command + shift +p for creating lambda using SAM CLI
+- Type command + shift +p for creating lambda using SAM CLI and select Create Lambda SAM specification.
 <img src="img/img1.png"/>
 <img src="img/img2.png"/>
 <img src="img/img3.png"/>
