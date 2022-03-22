@@ -149,12 +149,19 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-      Policies:
-        - xray:PutTraceSegments
-        - xray:PutTelemetryRecords
-        - xray:GetSamplingRules
-        - xray:GetSamplingTargets
-        - xray:GetSamplingStatisticSummaries
       Tracing: Active
   
 ```
+
+# 4. Sanpshots #
+## 4.1 X-ray visualization for lambda function ##
+<img src="img/1.png"/>
+
+## 4.2 Lambda function created with SAM CLI ##
+<img src="img/2.png"/>
+
+## 4.3 API gateway URL ##
+<img src="img/3.png"/>
+
+## 4.4 Cloudformation stack ##
+<img src="img/4.png"/>
