@@ -29,12 +29,6 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-      Policies:
-        - xray:PutTraceSegments
-        - xray:PutTelemetryRecords
-        - xray:GetSamplingRules
-        - xray:GetSamplingTargets
-        - xray:GetSamplingStatisticSummaries
       Tracing: Active
       
 
