@@ -106,10 +106,12 @@ mvn clean install
 
 ## 2. Enable x-ray tracking in .yml file #
 ```java
-Properties:
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
       CodeUri: HelloWorldFunction
       Handler: helloworld.App::handleRequest
-  --- Tracing: Active ----- THIS LINE 
       Runtime: java11
       Architectures:
         - x86_64
@@ -123,6 +125,7 @@ Properties:
           Properties:
             Path: /hello
             Method: get
+      Tracing: Active
 ```
 
 ## Reference ##
