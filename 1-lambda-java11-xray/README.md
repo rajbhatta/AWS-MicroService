@@ -134,7 +134,7 @@ Resources:
 ## Reference ##
 - https://docs.aws.amazon.com/lambda/latest/dg/java-tracing.html#java-tracing-api
 
-## 3. Add X-ray permission role in .yml file ##
+## 3. Add AWS defined policies in IAM role in .yml file ##
 ```java
 Resources:
   HelloWorldFunction:
@@ -156,6 +156,44 @@ Resources:
             Path: /hello
             Method: get
       Tracing: Active
+      Policies:
+        - AmazonS3ReadOnlyAccess (THIS VALUE DEFINED BY AWS)
+  
+```
+
+
+## 3. Add inline policies in IAM role in .yml file ##
+```java
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: HelloWorldFunction
+      Handler: helloworld.App::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          PARAM1: VALUE
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /hello
+            Method: get
+      Tracing: Active
+      Policies:
+        - Statement:
+          - Sid: LAMBDAS3READPOLICY
+            Effect: Allow
+            Action:
+            - s3:Get*
+            - s3:List*
+            - s3-object-lambda:Get*
+            - s3-object-lambda:List*
+            Resource: '*' (Action value can be obtained from AWS defined policy)
   
 ```
 

@@ -30,8 +30,18 @@ Resources:
             Path: /hello
             Method: get
       Tracing: Active
+      Policies:
+        - Statement:
+          - Sid: LAMBDAS3READPOLICY
+            Effect: Allow
+            Action:
+            - s3:Get*
+            - s3:List*
+            - s3-object-lambda:Get*
+            - s3-object-lambda:List*
+            Resource: '*'
+           
       
-
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
