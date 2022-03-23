@@ -8,6 +8,7 @@ https://www.appsdeveloperblog.com/how-to-install-maven-on-mac-os/
 ```js
 mvn clean install
 ```
+<b> Note: we must go inside function folder before we run mvn clean install command </b>
 
 ## 1. Adding X-ray dependencies for Java ##
 ```java
