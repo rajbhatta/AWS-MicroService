@@ -1,0 +1,7 @@
+target
+lib
+1-lambda-java11-xray/.aws-sam/build/HelloWorldFunction/helloworld/App.class
+1-lambda-java11-xray/.aws-sam/build/HelloWorldFunction/helloworld/App.class
+1-lambda-java11-xray/.aws-sam/build/HelloWorldFunction/lib/com.amazonaws.aws-lambda-java-core-1.2.1.jar
+1-lambda-java11-xray/.aws-sam/build/HelloWorldFunction/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar
+1-lambda-java11-xray/.aws-sam/build/HelloWorldFunction/lib/joda-time.joda-time-2.6.jar
