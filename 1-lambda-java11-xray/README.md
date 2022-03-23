@@ -10,6 +10,8 @@ mvn clean install
 ```
 <b> Note: we must go inside function folder before we run mvn clean install command </b>
 
+3. Make sure IAM user credential used for SAM CLI on local computer(inside .aws folder) has permission to work with CloudFormation, IAM role, Lambda. I have assigned administrator previleges. 
+
 ## 1. Adding X-ray dependencies for Java ##
 ```java
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
